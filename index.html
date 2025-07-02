@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>🧨 חנות הטילים של חמינאי</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #fffbe7;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ffdd57;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 5px dotted #c0392b;
+    }
+    header img {
+      width: 400px;
+      /* display: block;*/ 
+      margin: 0 auto 10px;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    nav {
+      background-color: #f1c40f;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      background-color: #fff8dc;
+      border: 2px dashed #d35400;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      position: relative;
+    }
+    .product img {
+      width: 150px; 
+      height:150px; 
+      margin-bottom: 10px;
+    }
+    .product h2 {
+      font-size: 1.4em;
+      margin: 10px 0 5px;
+    }
+    .product p {
+      font-size: 0.95em;
+      margin: 5px 0;
+    }
+    .add-to-cart {
+      background-color: #e67e22;
+      color: white;
+      padding: 10px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .add-to-cart:hover {
+      background-color: #d35400;
+    }
+    .cart {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #ffecb3;
+      padding: 15px;
+      border: 2px solid #f39c12;
+      border-radius: 10px;
+      max-width: 200px;
+    }
+    .reviews {
+      background-color: #fceabb;
+      padding: 20px;
+    }
+    .reviews h3 {
+      text-align: center;
+    }
+    .review {
+      border-bottom: 1px dashed #aaa;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+  </style>
+  <script>
+    let cartItems = [];
+    function addToCart(name) {
+      cartItems.push(name);
+      document.getElementById('cart-content').innerHTML = cartItems.join('<br>');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    
+    <h1>🧨 חנות הטילים של חמינאי</h1>
+    <img src="./images/logo-bazaar.png" alt="לוגו עם דוכן מצויר"  width="1500">
+    <img src="./images/logo.png" alt="לוגו עם דוכן מצויר"  width="1500">
+    <p>🎪 ברוכים הבאים לדוכן הכי מתפוצץ בבזאר! בין מלפפונים לקישואים - יש גם טילים!</p>
+  </header>
+  <nav>
+    <a href="#">ראשי</a>
+    <a href="#shop">קולקציית טילים</a>
+    <a href="#reviews">ביקורות לקוחות</a>
+  </nav>
+  <main class="product-grid">
+    <div class="product">
+      <img src="./images/big-missile.png" alt="טיל גדול">
+      <h2>🚀 טיל "בומבסטי"</h2>
+      <p>מחיר: ₪9,990</p>
+      <p>כל כך גדול שהוא מגיע עם רישיון לחניה.</p>
+      <button class="add-to-cart" onclick="addToCart('טיל בומבסטי')">💥 הוספה לסל</button>
+    </div>
+    <div class="product">
+      <img src="./images/medium-missile.png" alt="טיל בינוני">
+      <h2>☢️ טיל "מדיום רדיואקטיב"</h2>
+      <p>מחיר: ₪5,199</p>
+      <p>לא קטן, לא גדול – אבל בהחלט לא חוקי.</p>
+      <button class="add-to-cart" onclick="addToCart('טיל מדיום רדיואקטיב')">🔥 הוספה לסל</button>
+    </div>
+    <div class="product">
+      <img src="./images/little-missile.png" alt="טיל קטן">
+      <h2>🎯 טיל "זבנגון"</h2>
+      <p>מחיר: ₪2,999</p>
+      <p>קטן אבל כועס. מתאים לילדים חסרי סבלנות.</p>
+      <button class="add-to-cart" onclick="addToCart('טיל זבנגון')">🚀 הוספה לסל</button>
+    </div>
+    <div class="product">
+      <img src="./images/dumb-missile.png" alt="טיל טיפש">
+      <h2>🤪 טיל "טיפשון 9000"</h2>
+      <p>מחיר: ₪7,599</p>
+      <p>לא יודע לאן הוא טס, אבל עושה רושם.</p>
+      <button class="add-to-cart" onclick="addToCart('טיל טיפשון 9000')">🧨 הוספה לסל</button>
+    </div>
+  </main>
+
+  <section id="reviews" class="reviews">
+    <h3>🗣️ ביקורות לקוחות</h3>
+    <div class="review">
+      <strong>אבו מוחמד:</strong> "הזמנתי את 'טיפשון 9000' והוא התפוצץ במרפסת – בדיוק כמו שהובטח! שירות מעולה!"
+    </div>
+    <div class="review">
+      <strong>רחל מגבעתיים:</strong> "הטיל קטן מדיום רדיואקטיב הרס לי את המיקרוגל אבל לפחות קיבלתי קופון לפיצה."
+    </div>
+    <div class="review">
+      <strong>יוסי מהכפר:</strong> "ילדים ממש נהנו מה'זבנגון' – תודה חמינאי!"
+    </div>
+  </section>
+
+  <div class="cart">
+    <h4>🛒 עגלת קניות:</h4>
+    <div id="cart-content">(ריקה)</div>
+  </div>
+</body>
+</html>
